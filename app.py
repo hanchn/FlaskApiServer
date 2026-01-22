@@ -1,6 +1,6 @@
 from flask import Flask
-from models import db
-from routes import main
+from extensions import db
+from controllers.user_controller import user_bp
 
 def create_app():
     app = Flask(__name__)
@@ -9,7 +9,7 @@ def create_app():
 
     db.init_app(app)
 
-    app.register_blueprint(main)
+    app.register_blueprint(user_bp)
 
     with app.app_context():
         db.create_all()
