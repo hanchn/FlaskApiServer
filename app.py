@@ -1,6 +1,6 @@
 from flask import Flask
 from extensions import db
-from controllers.user_controller import user_bp
+from routes.user_routes import user_bp
 
 def create_app():
     app = Flask(__name__)
